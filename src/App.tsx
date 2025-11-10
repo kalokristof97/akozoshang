@@ -27,6 +27,7 @@ export default function App() {
       <Pentakkord />
       <Gallery />
       <Team />
+      <Contact />
       <Footer />
     </div>
   );
@@ -42,6 +43,7 @@ function Header() {
           <a href="#pentakkord" className="hover:text-[color:var(--deepBlue)] transition duration-200">Pentakkord™</a>
           <a href="#gallery" className="hover:text-[color:var(--deepBlue)] transition duration-200">Galéria</a>
           <a href="#team" className="hover:text-[color:var(--deepBlue)] transition duration-200">Csapat</a>
+          <a href="#contact" className="hover:text-[color:var(--deepBlue)] transition duration-200">Kapcsolat</a>
         </nav>
       </div>
     </header>
@@ -74,9 +76,23 @@ function Hero() {
         transition={{ duration: 1, delay: 0.6 }}
         className="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed"
       >
-        Zenés közösségépítés – emberközpontú módszer a zene, a ritmus és az együttrezdülés nyelvén.  
+        Zenés közösségépítés – emberközpontú módszer a zene, a ritmus és az együttrezdülés nyelvén.
         Felfedezni, hogy a közös alkotás miként formál közösséget, harmóniát és bizalmat.
       </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
+        className="mt-10"
+      >
+        <a
+          href="#contact"
+          className="inline-block px-8 py-3 rounded-full bg-[color:var(--deepBlue)] text-white font-semibold shadow-lg hover:shadow-xl hover:bg-[color:var(--coral)] hover:text-[color:var(--deepBlue)] transition-colors duration-200"
+        >
+          Ajánlatot kérek
+        </a>
+      </motion.div>
 
       <motion.p
         initial={{ opacity: 0 }}
@@ -248,6 +264,65 @@ function Team() {
           </motion.div>
         ))}
       </div>
+    </section>
+  );
+}
+
+// --- CONTACT ---
+function Contact() {
+  return (
+    <section
+      id="contact"
+      className="py-20 px-6 md:px-12 bg-[color:var(--lightAccent)] text-center"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto"
+      >
+        <h2 className="text-4xl font-extrabold text-[color:var(--deepBlue)]">Ajánlatkérés</h2>
+        <p className="mt-4 text-lg text-gray-700 leading-relaxed">
+          Szeretnéd megtapasztalni a Pentakkord™ módszert a csapatoddal?
+          Vedd fel velünk a kapcsolatot!
+        </p>
+
+        <div className="mt-10 bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 text-left flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <span className="text-sm uppercase tracking-wide text-[color:var(--coral)] font-semibold">
+              Email
+            </span>
+            <a
+              href="mailto:hello@akozoshang.hu"
+              className="text-xl font-semibold text-[color:var(--deepBlue)] hover:text-[color:var(--coral)] transition-colors"
+            >
+              hello@akozoshang.hu
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <span className="text-sm uppercase tracking-wide text-[color:var(--coral)] font-semibold">
+              Telefon
+            </span>
+            <div className="flex flex-col text-xl font-semibold text-[color:var(--deepBlue)] gap-1">
+              <a href="tel:+36205649299" className="hover:text-[color:var(--coral)] transition-colors">
+                +36/20 564-9299
+              </a>
+              <a href="tel:+36309791997" className="hover:text-[color:var(--coral)] transition-colors">
+                +36/30 979-1997
+              </a>
+            </div>
+          </div>
+
+          <a
+            href="mailto:hello@akozoshang.hu"
+            className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[color:var(--deepBlue)] text-white font-semibold shadow-lg hover:shadow-xl hover:bg-[color:var(--coral)] hover:text-[color:var(--deepBlue)] transition-colors duration-200"
+          >
+            Küldj ajánlatkérést
+          </a>
+        </div>
+      </motion.div>
     </section>
   );
 }
